@@ -16,7 +16,6 @@ const chain_id = 8453;
 function useContract() {
   const { walletProvider } = useAppKitProvider("eip155");
   const { address, isConnected } = useAppKitAccount();
-  console.log("Connected Wallet Address:", address);
 
   const getProvider = () => {
     return new BrowserProvider(walletProvider);
@@ -31,8 +30,6 @@ function useContract() {
   };
 
   const buy = async (paymentType, amount) => {
-    console.log(paymentType, amount);
-
     const provider = getProvider();
     const signer = await getSigner(provider);
     // print singer address
@@ -43,7 +40,6 @@ function useContract() {
     );
 
     if (paymentType === "ETH") {
-      console.log("ETH");
       const transaction = await contract.buyFromNative({
         value: parseUnits(amount.toString(), 18),
       });
@@ -84,8 +80,6 @@ function useContract() {
   };
 
   const claimTokens = async () => {
-    console.log(claimTokens);
-
     const provider = getProvider();
     const signer = await getSigner(provider);
     // print singer address
@@ -121,7 +115,7 @@ function useContract() {
     } else {
       // Use a public provider for read-only operations
       return new ethers.JsonRpcProvider(
-        "https://base-mainnet.g.alchemy.com/v2/y4AQ9T9QALtdnQP8eSB-XoFk2LfMQ2pp"
+        "https://rpc.ankr.com/base"
       );
     }
   };
@@ -159,7 +153,7 @@ function useContract() {
   };
 
   const getPresaleAllocation = async () => {
-    if (!isConnected) {
+    if (!isConnected || !walletProvider) {
       return 0;
     } else {
       const provider = getProvider();
@@ -177,22 +171,17 @@ function useContract() {
         signer
       );
 
-      console.log("Fetching unclaimed tokens for address:", address);
-
       // Call the getPresaleUnclaimed function
       const unclaimedTokens = await contract.getPresaleUnclaimed(address);
-      console.log("Raw unclaimed tokens (BigNumber):", unclaimedTokens);
 
       // Format the tokens using ethers.js formatUnits for 18 decimals
       const formattedUnclaimedTokens = formatUnits(unclaimedTokens, 18);
-      console.log("Formatted unclaimed tokens:", formattedUnclaimedTokens);
 
       return formattedUnclaimedTokens;
     }
   };
 
   const getData = async () => {
-    // console.log(address);
     let token;
     if (!isConnected) {
       return;
@@ -211,7 +200,7 @@ function useContract() {
 
     const balance = await token.balanceOf(address);
     const balanceInEth = formatUnits(balance, 18);
-    // console.log(balanceInEth);
+
     // contract token balance
     const contractBalanceInEth = await token.balanceOf(
       PRESALE_CONTRACT_ADDRESS
@@ -293,7 +282,7 @@ function useContract() {
       const provider = getProvider();
       // check chain id and throw error if not correct
       const chainId = await provider.getNetwork();
-      console.log(chainId);
+
       // base chain id
       if (chainId.chainId != chain_id) {
         return;
@@ -307,8 +296,6 @@ function useContract() {
       );
       price = await contract.perDollarPrice();
     }
-
-    console.log(price);
 
     return Number(formatUnits(price, 18)).toFixed(4);
   };

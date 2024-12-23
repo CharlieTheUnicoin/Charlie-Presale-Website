@@ -1,24 +1,24 @@
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createAppKit } from "@reown/appkit/react";
 import { EthersAdapter } from "@reown/appkit-adapter-ethers";
-import { base } from "@reown/appkit/networks";
+import { base, solana } from "@reown/appkit/networks";
 import RoutesFile from "./RoutesFile";
 import "./App.css";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { TonWalletProvider } from "./context/TonWalletContext";
 
 // 1. Get projectId
-const projectId = "dc835ecaaa41287eb59a75fd08e11d48";
+const projectId = "308d3b59065c26b4028999d22a457378";
 
 // 2. Set the networks
-const networks = [base];
+const networks = [base, solana];
 
 // 3. Create a metadata object - optional
 const metadata = {
-  name: "Charlie The Unicoin's presale website",
-  description: "Charlie The Unicoin's presale website",
-  url: "https://charlietheunicoin.sale/", // origin must match your domain & subdomain
+  name: "Charlie Unicoin AI's presale website",
+  description: "Charlie Unicoin AI's presale website",
+  url: "https://charlieunicornaipresale.com/", // origin must match your domain & subdomain
   icons: ["/public/logo.png"],
 };
 // 4. Create a AppKit instance
@@ -29,6 +29,8 @@ createAppKit({
   projectId,
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
+    socials: false,
+    email: false,
   },
 });
 
@@ -37,7 +39,7 @@ const isTonConnectSdkError = (error) => {
 };
 
 function App() {
-  window.addEventListener("unhandledrejection", function(event) {
+  window.addEventListener("unhandledrejection", function (event) {
     if (isTonConnectSdkError(event.reason)) {
       console.warn("TonConnect SDK Error:", event.reason);
     }
@@ -48,7 +50,7 @@ function App() {
       <TonWalletProvider>
         <RoutesFile />
       </TonWalletProvider>
-      <ToastContainer />
+      <ToastContainer theme="dark" />
     </TonConnectUIProvider>
   );
 }

@@ -34,14 +34,12 @@ body {
 }
 
 .clip {
-  clip-path: polygon(
-    calc(0% + 20px) 0%,
-    100% 0%,
-    100% calc(100% - 20px),
-    calc(100% - 20px) 100%,
-    0% 100%,
-    0% calc(0% + 20px)
-  );
+  clip-path: polygon(calc(0% + 20px) 0%,
+      100% 0%,
+      100% calc(100% - 20px),
+      calc(100% - 20px) 100%,
+      0% 100%,
+      0% calc(0% + 20px));
 }
 
 * {
@@ -51,29 +49,15 @@ body {
 }
 
 body {
-  font-family: "Monday Vacation Sans Serif", sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 @font-face {
   font-family: "Monday Vacation Sans Serif";
-  src: url("assets/fonts/otf/Monday\ Vacation\ Sans\ Serif.otf")
-    format("opentype");
+  src: url("assets/fonts/otf/Monday\ Vacation\ Sans\ Serif.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-a,
-button {
-  color: black;
 }
 
 section {
@@ -137,6 +121,7 @@ section {
 }
 
 @media (min-width: 992px) {
+
   /* lg screens */
   .listing {
     grid-template-columns: repeat(5, 1fr);
@@ -144,6 +129,7 @@ section {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+
   /* md screens */
   .listing {
     grid-template-columns: repeat(4, 1fr);
@@ -151,6 +137,7 @@ section {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+
   /* sm screens */
   .listing {
     grid-template-columns: repeat(3, 1fr);
@@ -158,11 +145,13 @@ section {
 }
 
 @media (max-width: 575px) {
+
   /* xs screens */
   .listing {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 .listing {
   display: flex;
   overflow: hidden;
@@ -227,12 +216,29 @@ section {
 }
 
 .timer-comp .time-item ._tag {
-  color: #fff;
+  color: linear-gradient(to right, #ce89ca, #5885bf, #7258df, #75eea3);
   font-size: 14px;
   margin-left: 4px;
-
   /* @include media("<=phoneH") {
     font-size: 10px;
     margin-left: 2px;
   } */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(17, 17, 17);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(17, 17, 17);
 }

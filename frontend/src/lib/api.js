@@ -10,15 +10,6 @@ const axiosInstance = axios.create({
   },
 });
 
-export const getCurrentTonPrice = async () => {
-  try {
-    const response = await axiosInstance.get("/current-ton-price");
-    return response.data;
-  } catch (err) {
-    console.log("fetch current ton price: ", err);
-  }
-};
-
 export const buyWithTon = async (data) => {
   try {
     const response = await axiosInstance.post("/buy-with-ton", data);

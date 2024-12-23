@@ -14,7 +14,6 @@ const CountdownTimer = () => {
     const calculateCountdown = () => {
       const now = new Date().getTime();
       const distance = targetDate - now;
-
       if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
@@ -35,23 +34,43 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="timer-comp">
-      <div className="timer-box">
-        <div className="time-item flex">
-          <div className="_vale">{countdown.days}</div>
-          <div className="_tag">Days</div>
+    <div className="timer-comp w-[90%] mx-auto md:w-full">
+      <div className="flex flex-row gap-[4px] md:gap-4">
+        <div className="flex items-center">
+          <div className="_vale">
+            <span className="gradient-text font-normal text-sm md:text-base">
+              {countdown.days}
+            </span>
+          </div>
+          <div className="_tag text-white text-xs md:text-base ml-2">Days</div>
         </div>
-        <div className="time-item flex">
-          <div className="_vale">{countdown.hours}</div>
-          <div className="_tag">Hours</div>
+        <div className="flex items-center">
+          <div className="_vale">
+            <span className="gradient-text font-normal text-sm md:text-base">
+              {countdown.hours}
+            </span>
+          </div>
+          <div className="_tag text-white text-xs md:text-base ml-2">Hours</div>
         </div>
-        <div className="time-item flex">
-          <div className="_vale">{countdown.minutes}</div>
-          <div className="_tag">Minutes</div>
+        <div className="flex items-center">
+          <div className="_vale">
+            <span className="gradient-text font-normal text-sm md:text-base">
+              {countdown.minutes}
+            </span>
+          </div>
+          <div className="_tag text-white text-xs md:text-base ml-2">
+            Minutes
+          </div>
         </div>
-        <div className="time-item flex">
-          <div className="_vale">{countdown.seconds}</div>
-          <div className="_tag">Seconds</div>
+        <div className="flex items-center">
+          <div className="_vale">
+            <span className="gradient-text font-normal text-sm md:text-base">
+              {countdown.seconds}
+            </span>
+          </div>
+          <div className="_tag text-white text-xs md:text-base ml-2">
+            Seconds
+          </div>
         </div>
       </div>
     </div>

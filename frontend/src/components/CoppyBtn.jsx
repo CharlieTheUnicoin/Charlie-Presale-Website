@@ -30,7 +30,7 @@ const CopyToClipboardButton = ({ textToCopy }) => {
   };
 
   return (
-    <div className="relative flex items-center justify-center p-2 rounded-xl  bg-transparent  ">
+    <div className="relative flex items-center justify-center p-0 xl:p-2 rounded-xl bg-transparent  ">
       <button
         onClick={(e) => {
           e.preventDefault();
@@ -39,9 +39,9 @@ const CopyToClipboardButton = ({ textToCopy }) => {
         className="flex justify-center items-center "
       >
         {copySuccess ? (
-          <AiOutlineCheck className="text-white hover:text-[#c9c9c9] w-6 h-6" />
+          <AiOutlineCheck className="text-white hover:text-[#c9c9c9] w-3 h-3 md:w-6 md:h-6" />
         ) : (
-          <AiOutlineCopy className="text-white hover:text-[#cacaca] w-6 h-6" />
+          <AiOutlineCopy className="text-white hover:text-[#cacaca] w-3 h-3 md:w-6 md:h-6" />
         )}
       </button>
     </div>

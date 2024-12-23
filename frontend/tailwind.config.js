@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+      },
       gradientColorStops: {
         "custom-1": "#CE89CA",
         "custom-2": "#5885BF",
@@ -15,7 +18,7 @@ module.exports = {
         "custom-gradient-button":
           "linear-gradient(90deg, #CE89CA 0%, #5885BF 33.33%, #7258DF 66.67%, #75EEA3 100%)",
       },
-     
+
       backgroundOpacity: {
         50: "0.5",
         75: "0.75",
@@ -34,4 +37,3 @@ module.exports = {
   },
   plugins: [],
 };
-
