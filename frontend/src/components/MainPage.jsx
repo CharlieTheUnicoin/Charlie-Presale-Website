@@ -69,14 +69,14 @@ const MainPage = () => {
   const downloadWhitepaper = () => {
     // Replace 'path-to-whitepaper.pdf' with your actual file path or URL
     const link = document.createElement("a");
-    link.href = "/CharlieWhitepaper.pdf"; // Adjust path as needed
-    link.download = "whitepaper.pdf"; // Name of the downloaded file
+    link.href = "/Charlie Unicorn AI Whitepaper.pdf"; // Adjust path as needed
+    link.download = "charlie_unicorn_ai_whitepaper.pdf"; // Name of the downloaded file
     link.click();
   };
 
   const redirectToMainSite = () => {
     // Replace '/CharlieWhitepaper.pdf' with your actual URL
-    window.location.href = "https://charlieunicornai.com/";
+    window.location.href = "https://charlieunicornai.eu/";
   };
 
   const handlePaymentChange = async (e) => {
@@ -548,7 +548,7 @@ const MainPage = () => {
           </p>
         </div>
         {/* Cards */}
-        <div className="relative card-bar w-[83%] mx-auto bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-8 mb-1 h-[740px] 2xl:h-[380px] xl:h-[380px] lg:h-[220px] md:h-[170px] sm:h-[600px]">
+        {/* <div className="relative card-bar w-[83%] mx-auto bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-8 mb-1 h-[740px] 2xl:h-[380px] xl:h-[380px] lg:h-[220px] md:h-[170px] sm:h-[600px]">
           <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C] flex flex-col md:flex-row gap-4 p-5">
             <div className="p-2">
               <img
@@ -572,7 +572,7 @@ const MainPage = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div
           className="relative w-[83%] mx-auto bg-gradient border-0 [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-8 mb-1 h-[80px]"
@@ -694,7 +694,12 @@ const MainPage = () => {
                 <div className="py-2 px-4 absolute inset-[1px] bg-[#1C1C1C] [clip-path:polygon(0%_1.5em,_1.5em_0%,_100%_0%,_100%_calc(100%_-_1.5em),_calc(100%_-_1.5em)_100%,_0_100%)]">
                   <div className="flex flex-col xl:flex-row md:justify-between">
                     <div className="flex flex-align-center">
-                      <img src={"./logo.png"} height={60} width={60} alt="" />
+                      <img
+                        src={"./logo (2).png"}
+                        height={70}
+                        width={70}
+                        alt=""
+                      />
                       <h2 className="text-white font-semibold">$CHRLE</h2>
                     </div>
                     <div className="flex flex-row gap-8 items-center mt-2 md:mt-0">
@@ -749,7 +754,7 @@ const MainPage = () => {
                       className="absolute [clip-path:polygon(0%_0.8em,_0.8em_0%,_100%_0%,_100%_calc(100%_-_0.8em),_calc(100%_-_0.8em)_100%,_0_100%)] bg-gradient inset-[1px] font-normal text-base text-white"
                       onClick={downloadWhitepaper}
                     >
-                      WHITEPAPER
+                      WHITE PAPER
                     </button>
                   </div>
                 </div>
@@ -1207,7 +1212,7 @@ const MainPage = () => {
                 <div className="mt-5">
                   <div className="text-center">
                     <span className="gradient-text font-semibold text-lg md:text-2xl">
-                      NFT Marketplace
+                      NFT Marketplace Soon
                     </span>
                   </div>
                   <p className="text-white/80 font-normal text-sm md:text-base mt-1">
@@ -1219,7 +1224,7 @@ const MainPage = () => {
                 <div className="mt-5">
                   <div className="text-center">
                     <span className="gradient-text font-semibold text-lg md:text-2xl">
-                      AI Video generator
+                      AI Video generator Soon
                     </span>
                   </div>
                   <p className="text-white/80 font-normal text-sm md:text-base mt-1">
@@ -1326,14 +1331,14 @@ const MainPage = () => {
             {/* Top Centered Image */}
             <div className="flex relative justify-center mb-20 mt-4">
               <img
-                src="logo.png"
+                src="logo (2).png"
                 alt="Main Image"
                 className="lg:w-40 w-32 tokenomics-logo"
               />
-              <h1 className="absolute mt-32 lg:mt-[190px] text-white font-normal text-md md:text-xl tokenomics-title">
+              <h1 className="absolute mt-32 lg:mt-[150px] text-white font-normal text-md md:text-xl tokenomics-title">
                 Tokenomics
               </h1>
-              <p className="absolute mt-40 lg:mt-[220px] text-sm token-billion lg:text-[30px] tokenomics-subtitle bg-gradient-to-r from-custom-1 via-custom-2 to-custom-4 bg-clip-text text-transparent">
+              <p className="absolute mt-40 lg:mt-[190px] text-sm token-billion lg:text-[30px] tokenomics-subtitle bg-gradient-to-r from-custom-1 via-custom-2 to-custom-4 bg-clip-text text-transparent">
                 Token: <span className="font-semibold gradient-text">100</span>{" "}
                 BILLION
               </p>
@@ -1350,14 +1355,14 @@ const MainPage = () => {
           <div className="absolute bg-[#1C1C1C] [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] inset-[1px]">
             <div className="flex relative justify-center mb-20 mt-10">
               <img
-                src="logo.png"
+                src="logo (2).png"
                 alt="Main Image"
                 className="lg:w-40 w-32 roadmap-logo"
               />
-              <h1 className="absolute mt-32 lg:mt-[190px] text-white font-normal text-md md:text-xl roadmap-title">
+              <h1 className="absolute mt-32 lg:mt-[160px] text-white font-normal text-md md:text-xl roadmap-title">
                 Charlie Unicoin AI
               </h1>
-              <p className="absolute roadmap-subtitle roadmap-title mt-[150px] lg:mt-44 text-lg lg:text-[30px] bg-gradient-to-r from-custom-1 via-custom-2 to-custom-4 bg-clip-text text-transparent">
+              <p className="absolute roadmap-subtitle mt-[150px] lg:mt-40 text-lg lg:text-[30px] bg-gradient-to-r from-custom-1 via-custom-2 to-custom-4 bg-clip-text text-transparent">
                 Road Map
               </p>
             </div>
@@ -1462,23 +1467,11 @@ const MainPage = () => {
               <img src="./youtube.png" alt="" className="icon" />
             </a>
             <a
-              href="https://x.com/Charlie_Unicoin"
+              href="https://x.com/CHRLE_UnicornAI"
               target="_blank"
               rel="noreferrer"
             >
               <img src="./twitter.png" alt="" className="icon" />
-            </a>
-            <a
-              href="https://discord.com/invite/charlietheunicoin"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="./discord1.png"
-                alt=""
-                className="icon"
-                style={{ width: 35, height: "auto" }}
-              />
             </a>
           </div>
           <a href="#home">

@@ -12,15 +12,15 @@
   }
 
   .token-billion {
-    margin-top: 220px;
-  }
-
-  .roadmap-title {
     margin-top: 190px;
   }
 
+  .roadmap-title {
+    margin-top: 160px;
+  }
+
   .roadmap-subtitle {
-    margin-top: 220px;
+    margin-top: 190px;
   }
 }
 
@@ -34,11 +34,11 @@
   }
 
   .roadmap-title {
-    margin-top: 190px;
+    margin-top: 160px;
   }
 
   .roadmap-subtitle {
-    margin-top: 220px;
+    margin-top: 190px;
   }
 }
 
@@ -79,7 +79,11 @@
   }
 
   .roadmap-title {
-    margin-top: 200px;
+    margin-top: 160px;
+  }
+
+  .roadmap-subtitle {
+    margin-top: 190px;
   }
 
   .about-description {
@@ -98,19 +102,19 @@
   }
 
   .tokenomics-title {
-    margin-top: 150px;
+    margin-top: 120px;
   }
 
   .token-billion {
-    margin-top: 180px;
+    margin-top: 150px;
   }
 
   .roadmap-title {
-    margin-top: 160px;
+    margin-top: 130px;
   }
 
   .roadmap-subtitle {
-    margin-top: 190px;
+    margin-top: 160px;
   }
 }
 
@@ -167,11 +171,11 @@
   }
 
   .tokenomics-title {
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
   .tokenomics-subtitle {
-    margin-top: 120px;
+    margin-top: 100px;
   }
 
   .roadmap {

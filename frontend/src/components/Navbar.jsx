@@ -6,8 +6,7 @@ import { useLocation } from "react-router-dom";
 import { useAppKit, useAppKitAccount } from "@reown/appkit/react";
 
 const style = {
-  link:
-    "text-base font-normal z-10 hover:gradient-text transition-all duration-300 ease-in-out text-white",
+  link: "text-base font-normal z-10 hover:gradient-text transition-all duration-300 ease-in-out text-white",
 };
 
 const Navbar = () => {
@@ -40,29 +39,32 @@ const Navbar = () => {
         <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] w-full relative bg-[#444444] md:h-[70px] h-[250px] px-2">
           <div className="bg-[#1C1C1C] border-0 [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-20 py-3 px-5">
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-20">
-              <img src="logo1.png" className="w-10 " alt="Logo" />
+              <img src="logo (2).png" className="w-10 " alt="Logo" />
 
               <div className="flex flex-col md:flex-row gap-4 md:gap-7 md:text-left">
                 <a
                   href="#"
-                  className={`${style.link} ${active === "home" &&
-                    "gradient-text"}`}
+                  className={`${style.link} ${
+                    active === "home" && "gradient-text"
+                  }`}
                   onClick={() => setActive("home")}
                 >
                   Home
                 </a>
                 <a
                   href="#about"
-                  className={`${style.link} ${active === "about" &&
-                    "gradient-text"}`}
+                  className={`${style.link} ${
+                    active === "about" && "gradient-text"
+                  }`}
                   onClick={() => setActive("about")}
                 >
                   About
                 </a>
                 <a
                   href="#roadmap"
-                  className={`${style.link} ${active === "roadmap" &&
-                    "gradient-text"}`}
+                  className={`${style.link} ${
+                    active === "roadmap" && "gradient-text"
+                  }`}
                   onClick={() => setActive("roadmap")}
                 >
                   Roadmap
