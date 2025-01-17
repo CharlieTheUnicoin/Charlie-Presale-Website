@@ -34,8 +34,6 @@ const MainPage = () => {
   const [loading, setLoading] = useState(false);
   const [totalUsdRaised, setTotalUsdRaised] = useState(null);
   const [unclaimedTokens, setUnclaimedTokens] = useState(null);
-  const [buyDisabled, setBuyDisabled] = useState(true);
-  const [claimDisabled, setClaimDisabled] = useState(true);
 
   const {
     buy,
@@ -98,7 +96,12 @@ const MainPage = () => {
 
     const inputName = e.target.name;
     const inputValue = e.target.value;
-
+    if (inputName === "amount" && inputValue === 0) {
+      return;
+    }
+    if (inputName === "receiveable" && receiveable === 0) {
+      return;
+    }
     if (inputName === "amount") {
       setAmount(inputValue); // Store raw input as string
       const numericValue = parseFloat(inputValue);
@@ -212,6 +215,7 @@ const MainPage = () => {
     } catch (err) {
       console.log(err);
       toast.error("Error Claiming");
+    } finally {
       setLoading(false);
     }
   };
@@ -526,10 +530,26 @@ const MainPage = () => {
       <div className="font-[Montserrat] mt-8">
         {/* Header */}
         {/* Main Image Section */}
-        <div className="flex justify-center gap-2 md:gap-4 py-6">
-          <img src="nft2.png" alt="" className="w-36 md:w-60" />
-          <img src="nft.png" alt="" className="absolute w-28 md:w-48" />
-          <img src="nft1.png" alt="" className="w-36 md:w-60" />
+        <div className="flex justify-center gap-2 md:gap-4 py-6 ">
+          <div className="relative h-60 w-60 ads  bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-6 md:mt-10 -rotate-[20deg]">
+            <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C]">
+              <img
+                src="game5.jpg"
+                alt=""
+                className="h-60 w-60 ads-img object-cover"
+              />
+            </div>
+          </div>
+          <div className="relative h-60 w-60 ads bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)]  z-20">
+            <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C]">
+              <img src="game4.jpg" alt="" className="ads-img object-cover" />
+            </div>
+          </div>
+          <div className="relative h-60 w-60 ads bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-6 md:mt-10  rotate-[20deg]">
+            <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C]">
+              <img src="game1.jpg" alt="" className="ads-img object-cover" />
+            </div>
+          </div>
         </div>
         <div className="pt-6 pb-6 text-center w-[83%] mx-auto">
           <h1 className="text-white text-xl md:text-2xl font-semibold">
@@ -538,42 +558,103 @@ const MainPage = () => {
           </h1>{" "}
           <br />
           <p className="text-white/80 font-normal text-sm md:text-base">
-            What is Charlie Unicoin AI? Is it a meme? A DAO? A DEX? An AI
-            project? DeFi? An NFT collection? An animated series?{" "}
-            <br className="hidden md:inline" />
-            Well, yes—it's all of that and so much more! Charlie Unicoin AI is
-            an innovative blend of meme magic, artificial intelligence, DeFi,
-            gaming, NFTs, animated mayhem, and too many more to list here!
-            <br className="hidden md:inline" />
+            Charlie Unicorn AI is a registered business operating in Poland
+            within the European Unicorn. By investing in Charlie, you are
+            investing safely. Together with our dedicated and exceptionally
+            talented team, we aim to make our mark in the history of
+            cryptocurrencies by creating a unique project where everyone can
+            find something for themselves.
+            <br />
+            <br />
+            Our vision is to build a comprehensive ecosystem that includes:
+          </p>
+          <p className="text-left w-full md:w-[40%] mx-auto text-white/80 font-normal text-sm md:text-base">
+            <br />• Play-to-Earn games (PC) <br />• AI-powered applications
+            <br /> • A proprietary blockchain that is ultra-fast and offers low
+            transaction fees.
+            <br />
+            <br />
+          </p>
+          <p className="text-white/80 font-normal text-sm md:text-base mb-8">
+            Join us on this exciting journey as we innovate and shape the future
+            of technology and blockchain!
           </p>
         </div>
-        {/* Cards */}
-        {/* <div className="relative card-bar w-[83%] mx-auto bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-8 mb-1 h-[740px] 2xl:h-[380px] xl:h-[380px] lg:h-[220px] md:h-[170px] sm:h-[600px]">
-          <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C] flex flex-col md:flex-row gap-4 p-5">
-            <div className="p-2">
-              <img
-                src="cs.png"
-                alt="CyberScope logo"
-                className="w-full h-auto rounded-lg"
-              />
+        <div className="w-[83%] mx-auto">
+          <p className="text-white/80 text-lg mt-4 text-center font-semibold">
+            Upcoming games Q3 2025/Q1 2026, Your{" "}
+            <span className="gradient-text">$CHRLE</span> token as a game
+            currency
+          </p>
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-32 lg:mt-8 mt-10">
+            <div className="flex flex-col items-center justify-center">
+              <div className="flex items-center justify-center">
+                <div className="relative clip w-80 h-80 mx-auto roadmap bg-gradient mt-8 -rotate-[15deg] game-item">
+                  <div className="absolute clip inset-[1px] bg-[#181818] opacity-90">
+                    <img
+                      src="game5.jpg"
+                      alt="Game5"
+                      className="object-cover w-80 h-80 game-item"
+                    />
+                  </div>
+                </div>
+                <div className="relative clip w-80 h-80 mx-auto roadmap bg-gradient mt-8 rotate-[15deg] game-item">
+                  <div className="absolute clip inset-[1px] bg-[#181818] opacity-90">
+                    <img
+                      src="game4.jpg"
+                      alt="Game4"
+                      className="object-cover w-80 h-80 game-item"
+                    />
+                  </div>
+                </div>
+              </div>
+              <h2 className="md:text-lg font-semibold text-sm gradient-text mt-8">
+                Unicorn Racing World
+              </h2>
+              <p className="text-white/80 md:text-base">
+                Unicorn Racing World is innovative game for PC, that connects
+                the elements breeding, racing, trading plants in dynamic,
+                virtual world.
+              </p>
             </div>
-            <div className="p-2">
-              <img
-                src="audit.jpeg"
-                alt="Audit Certificate"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <div className="p-2">
-              <img
-                src="kyc.png"
-                alt="KYC Certificate"
-                className="w-full h-auto rounded-lg"
-              />
+            <div className="flex flex-col items-center justify-center">
+              <div className="flex items-center justify-center">
+                <div className="relative clip w-80 h-80 mx-auto roadmap bg-gradient mt-8 -rotate-[15deg] game-item">
+                  <div className="absolute clip inset-[1px] bg-[#181818] opacity-90">
+                    <img
+                      src="game3.jpg"
+                      alt="Game3"
+                      className="object-cover w-80 h-80 game-item"
+                    />
+                  </div>
+                </div>
+                <div className="relative clip w-80 h-80 mx-auto roadmap bg-gradient mt-8 rotate-[15deg] game-item">
+                  <div className="absolute clip inset-[1px] bg-[#181818] opacity-90">
+                    <img
+                      src="game1.jpg"
+                      alt="Game1"
+                      className="object-cover w-80 h-80 game-item"
+                    />
+                  </div>
+                </div>
+              </div>
+              <h2 className="md:text-lg font-semibold text-sm gradient-text mt-8">
+                Legendary Battles
+              </h2>
+              <p className="text-white/80 md:text-base">
+                Unicorn Chronicles is a strategic game a card game that combines
+                unique features characters, dynamic combat mechanics and
+                Play-to-Earn (P2E) system.
+              </p>
             </div>
           </div>
-        </div> */}
-
+          <p className="text-white/80 text-center mt-8 font-semibold">
+            You can play now our
+            <span className="gradient-text"> P2E </span>
+            game on telegram
+            <br />
+          </p>
+        </div>
         <div
           className="relative w-[83%] mx-auto bg-gradient border-0 [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-8 mb-1 h-[80px]"
           style={{
@@ -1116,7 +1197,11 @@ const MainPage = () => {
                       onChange={handlePaymentChange}
                       className="bg-transparent text-white w-[90%] md:w-full placeholder-gray-300 flex-1 outline-none px-2"
                     />
-                    <img src="./logo.png" alt="$CHRLE" className="w-7 h-7" />
+                    <img
+                      src="./logo (2).png"
+                      alt="$CHRLE"
+                      className="w-7 h-7"
+                    />
                   </div>
                 </div>
               </div>
@@ -1192,53 +1277,67 @@ const MainPage = () => {
         </div>
 
         {/* About Section */}
-        <div id="about" className="w-[83%] mx-auto mt-14">
-          <div className="flex flex-col lg:flex-row lg:gap-28 items-center justify-between">
-            <div className="relative w-full about-description lg:w-[50%] h-[400px] bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)]">
-              <div className="absolute inset-[1px] bg-[#1C1C1C] [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] p-4 md:p-10 flex flex-col items-center justify-center">
-                <div>
-                  <div className="text-center">
-                    <span className="gradient-text font-semibold text-lg md:text-2xl">
-                      NFT Collection
-                    </span>
-                  </div>
-                  <p className="text-white/80 font-normal text-sm md:text-base mt-1">
-                    Dive into Charlie's whimsical world with a limited
-                    collection of 10,000 NFTs. Rarity levels add a fun dynamic
-                    that makes certain NFTs highly coveted by collectors. NFTs
-                    will have uses in future games, giving you a head start.
-                  </p>
-                </div>
-                <div className="mt-5">
-                  <div className="text-center">
-                    <span className="gradient-text font-semibold text-lg md:text-2xl">
-                      NFT Marketplace Soon
-                    </span>
-                  </div>
-                  <p className="text-white/80 font-normal text-sm md:text-base mt-1">
-                    Trade official Charlie NFTs on our very own NFT Marketplace!
-                    NFTs can be traded on all major NFT platforms like OpenSea
-                    and Magic Eden.
-                  </p>
-                </div>
-                <div className="mt-5">
-                  <div className="text-center">
-                    <span className="gradient-text font-semibold text-lg md:text-2xl">
-                      AI Video generator Soon
-                    </span>
-                  </div>
-                  <p className="text-white/80 font-normal text-sm md:text-base mt-1">
-                    Create your own Charlie video clips with our state of the
-                    art AI video generator, specially designed in the style and
-                    prompt of Charlie!
-                  </p>
-                </div>
-              </div>
+        <div className="flex justify-center gap-2 md:gap-4 py-6 mt-14">
+          <div className="relative h-60 w-60 ads  bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-6 md:mt-10 -rotate-[20deg]">
+            <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C]">
+              <img
+                src="game5.jpg"
+                alt=""
+                className="h-60 w-60 ads-img object-cover"
+              />
             </div>
-            <div className="flex justify-center gap-2 lg:gap-4 py-6 w-full lg:w-[40%]">
-              <img src="nft2.png" alt="" className="w-36 md:w-60" />
-              <img src="nft.png" alt="" className="absolute w-28 md:w-48" />
-              <img src="nft1.png" alt="" className="w-36 md:w-60" />
+          </div>
+          <div className="relative h-60 w-60 ads bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)]  z-20">
+            <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C]">
+              <img src="game4.jpg" alt="" className="ads-img object-cover" />
+            </div>
+          </div>
+          <div className="relative h-60 w-60 ads bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] mt-6 md:mt-10  rotate-[20deg]">
+            <div className="[clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] absolute inset-[1px] bg-[#1C1C1C]">
+              <img src="game1.jpg" alt="" className="ads-img object-cover" />
+            </div>
+          </div>
+        </div>
+        <div id="about" className="w-[83%] mx-auto mt-14">
+          <div className="relative w-full about-description h-[300px] bg-gradient [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)]">
+            <div className="absolute inset-[1px] bg-[#1C1C1C] [clip-path:polygon(0%_0.9em,_0.9em_0%,_100%_0%,_100%_calc(100%_-_0.9em),_calc(100%_-_0.9em)_100%,_0_100%)] p-4 md:p-10 flex flex-col items-center justify-center">
+              <div>
+                <div className="text-center">
+                  <span className="gradient-text font-semibold text-lg md:text-2xl">
+                    NFT Collection
+                  </span>
+                </div>
+                <p className="text-white/80 font-normal text-sm md:text-base mt-1">
+                  Dive into Charlie's whimsical world with a limited collection
+                  of 10,000 NFTs. Rarity levels add a fun dynamic that makes
+                  certain NFTs highly coveted by collectors. NFTs will have uses
+                  in future games, giving you a head start.
+                </p>
+              </div>
+              <div className="mt-5">
+                <div className="text-center">
+                  <span className="gradient-text font-semibold text-lg md:text-2xl">
+                    NFT Marketplace Soon
+                  </span>
+                </div>
+                <p className="text-white/80 font-normal text-sm md:text-base mt-1">
+                  Trade official Charlie NFTs on our very own NFT Marketplace!
+                  NFTs can be traded on all major NFT platforms like OpenSea and
+                  Magic Eden.
+                </p>
+              </div>
+              <div className="mt-5">
+                <div className="text-center">
+                  <span className="gradient-text font-semibold text-lg md:text-2xl">
+                    AI Video generator Soon
+                  </span>
+                </div>
+                <p className="text-white/80 font-normal text-sm md:text-base mt-1">
+                  Create your own Charlie video clips with our state of the art
+                  AI video generator, specially designed in the style and prompt
+                  of Charlie!
+                </p>
+              </div>
             </div>
           </div>
         </div>

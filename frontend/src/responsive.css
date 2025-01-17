@@ -8,7 +8,7 @@
   }
 
   .about-description {
-    height: 450px;
+    height: 300px;
   }
 
   .token-billion {
@@ -48,11 +48,16 @@
   }
 
   .about-description {
-    height: 450px;
+    height: 350px;
   }
 
   .token-detail {
     height: 650px;
+  }
+
+  .game-item {
+    width: 250px;
+    height: 250px;
   }
 }
 
@@ -89,6 +94,11 @@
   .about-description {
     height: 570px;
   }
+
+  .game-item {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -115,6 +125,16 @@
 
   .roadmap-subtitle {
     margin-top: 160px;
+  }
+
+  .ads {
+    width: 200px;
+    height: 200px;
+  }
+
+  .game-item {
+    width: 250px;
+    height: 250px;
   }
 }
 
@@ -202,6 +222,21 @@
   .footer-bar {
     height: 120px;
   }
+
+  .ads {
+    width: 110px;
+    height: 110px;
+  }
+
+  .ads-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .game-item {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -257,6 +292,21 @@
 
   .footer-bar {
     height: 120px;
+  }
+
+  .ads {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ads-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .game-item {
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -320,6 +370,21 @@
   }
 
   .footer-bar {
+    height: 120px;
+  }
+
+  .ads {
+    width: 90px;
+    height: 90px;
+  }
+
+  .ads-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .game-item {
+    width: 120px;
     height: 120px;
   }
 }
